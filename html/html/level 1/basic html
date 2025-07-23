@@ -1,0 +1,10 @@
+
+<!DOCTYPE html>      [defines the htmlversion] itsa modern syntex
+<html lang="en">     [parents of all htmltags/root elements]
+<head>               [paent of meta data tags]
+    <title>my first web page </title>         [title of the web page]
+</head>
+<body>               [parent of content tags]
+    <h1>hello world!</h1>                     [heading tag]
+</body>
+</html>

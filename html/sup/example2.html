@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Page</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #eef2f3;
+      padding: 40px;
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin-top: 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .success-message {
+      display: none;
+      text-align: center;
+      color: green;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .social-links {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-links a {
+      text-decoration: none;
+      color: #333;
+      margin: 0 10px;
+      font-size: 24px;
+    }
+
+    iframe {
+      margin-top: 30px;
+      width: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+
+  <!-- Font Awesome for social icons -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+      <div class="success-message" id="successMessage">✅ Message sent successfully!</div>
+    </form>
+
+    <div class="social-links">
+      <p>Follow me on:</p>
+      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+    </div>
+
+    <!-- Google Map Embed -->
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d212902.45608839506!2d72.8232742!3d33.6844202!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38dfbfd50644f2b5%3A0x58d10a0f74f7ecf0!2sIslamabad%2C%20Pakistan!5e0!3m2!1sen!2s!4v1689410524984"
+      height="300"
+      allowfullscreen=""
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <script>
+    const form = document.getElementById("contactForm");
+    const successMessage = document.getElementById("successMessage");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault(); // Form submit hone se page reload na ho
+      successMessage.style.display = "block";
+
+      // Inputs clear karne ke liye
+      form.reset();
+
+      // Message hide karna after 3 seconds
+      setTimeout(() => {
+        successMessage.style.display = "none";
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
